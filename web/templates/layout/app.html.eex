@@ -22,12 +22,26 @@
           </div>
           <nav class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
+              <%= if @current_user do %>
               <li>
                 <%= link "Users", to: user_path(@conn, :index) %>
               </li>
               <li>
-                <%= link "Signup", to: user_path(@conn, :new) %>
+                <%= link "#{@current_user.username}", to: user_path(@conn, :index) %>
               </li>
+              <li>
+                <%= link "Log out", to: session_path(@conn, :delete, @current_user),
+                      method: "delete",
+                      form: [class: "form-inline", id: "logout-form"] %>
+              </li>
+              <% else %>
+              <li>
+                <%= link "Register", to: user_path(@conn, :new) %>
+              </li>
+              <li>
+                <%= link "Log in", to: session_path(@conn, :new) %>
+              </li>
+              <% end %>
             </ul>
           </nav>
         </div>
