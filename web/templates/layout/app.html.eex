@@ -27,12 +27,10 @@
                 <%= link "Users", to: user_path(@conn, :index) %>
               </li>
               <li>
-                <%= link "#{@current_user.username}", to: user_path(@conn, :index) %>
+                <%= link "#{@current_user.username}", to: user_path(@conn, :index)%>
               </li>
               <li>
-                <%= link "Log out", to: session_path(@conn, :delete, @current_user),
-                      method: "delete",
-                      form: [class: "form-inline", id: "logout-form"] %>
+                <%= link "Log out", to: session_path(@conn, :logout), rel: "nofollow" %>
               </li>
               <% else %>
               <li>
