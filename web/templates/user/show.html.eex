@@ -1,0 +1,9 @@
+<h1><%= render "_user.html", user: @user %></h1>
+<div>
+
+    ID: <%= @user.id %>
+</div>
+<div>
+    <hr>
+    <%= link "Back", to: user_path(@conn, :index) %>
+</div>
