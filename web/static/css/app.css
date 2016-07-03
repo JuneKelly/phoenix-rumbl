@@ -76,3 +76,9 @@ form.link, form.button {
     border-bottom: 0;
   }
 }
+
+#logout-form {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
