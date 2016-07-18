@@ -15,4 +15,12 @@ defmodule Rumbl.Category do
     |> cast(params, [:name])
     |> validate_required([:name])
   end
+
+  def alphabetical(query) do
+    from row in query, order_by: row.name
+  end
+
+  def names_and_ids(query) do
+    from row in query, select: {row.name, row.id}
+  end
 end
