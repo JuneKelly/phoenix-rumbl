@@ -56,4 +56,5 @@ defmodule Rumbl.Auth do
       |> halt()
     end
   end
+
 end

@@ -27,6 +27,9 @@
                 <%= link "Users", to: user_path(@conn, :index) %>
               </li>
               <li>
+                <%= link "Videos", to: video_path(@conn, :index) %>
+              </li>
+              <li>
                 <%= link "#{@current_user.username}",
                     to: user_path(@conn, :show, @current_user.id)%>
               </li>
