@@ -3,10 +3,9 @@ defmodule Rumbl.AuthTest do
   alias Rumbl.Auth
 
   setup %{conn: conn} do
-    conn =
-      conn
-      |> bypass_through(Rumbl.Router, :browser)
-      |> get("/")
+    conn = conn
+    |> bypass_through(Rumbl.Router, :browser)
+    |> get("/")
     {:ok, %{conn: conn}}
   end
 
