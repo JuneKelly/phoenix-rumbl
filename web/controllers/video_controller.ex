@@ -83,11 +83,12 @@ defmodule Rumbl.VideoController do
   end
 
   defp load_categories(conn, _) do
-    query =
+    categories =
       Category
       |> Category.alphabetical
       |> Category.names_and_ids
-    categories = Repo.all query
+      |> Repo.all
     assign(conn, :categories, categories)
   end
+
 end
